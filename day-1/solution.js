@@ -1,6 +1,6 @@
 const fs = require("fs");
 let listOfCalories = fs.readFileSync("input.txt", "utf-8");
-listOfCalories = listOfSuplies.split(/\r?\n/);
+listOfCalories = listOfCalories.split(/\r?\n/);
 
 const elfsCalories = [];
 let sumOfElfCalories = 0;

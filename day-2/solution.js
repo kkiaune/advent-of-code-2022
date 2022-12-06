@@ -1,6 +1,6 @@
 const fs = require("fs");
 let listOfCombinations = fs.readFileSync("input.txt", "utf-8");
-listOfCombinations = listOfSuplies.split(/\r?\n/);
+listOfCombinations = listOfCombinations.split(/\r?\n/);
 
 const shape = {
   ROCK: "A",
