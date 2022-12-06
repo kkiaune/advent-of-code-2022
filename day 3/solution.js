@@ -39,10 +39,10 @@ const getPrioritiesSum = (listOfLetters) => {
 };
 
 console.log(
-  "first solution:",
+  "first part result:",
   getPrioritiesSum(getDuplicateLettersInSackCompartmanets())
 );
 console.log(
-  "first solution:",
+  "second part result:",
   getPrioritiesSum(getDuplicateLettersInMultipleSacks())
 );

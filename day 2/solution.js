@@ -1,5 +1,6 @@
 const fs = require("fs");
-const listOfCombinations = fs.readFileSync("input.txt", "utf-8");
+let listOfCombinations = fs.readFileSync("input.txt", "utf-8");
+listOfCombinations = listOfSuplies.split(/\r?\n/);
 
 const shape = {
   ROCK: "A",
@@ -28,7 +29,7 @@ const possibleOutcomes = {
 const getScore = (strategy) => {
   let score = 0;
 
-  listOfCombinations.split(/\r?\n/).forEach((combination) => {
+  listOfCombinations.forEach((combination) => {
     const [oponentShape, myMove] = combination.split(" ");
     // console.log("oponents move %s, my move %s", oponentShape, myMove);
 
@@ -52,7 +53,7 @@ const firstSolutionStrategy = ({ myMove }) =>
     Z: shape.SCIZORS,
   }[myMove]);
 
-console.log("first solution score", getScore(firstSolutionStrategy));
+console.log("first part result:", getScore(firstSolutionStrategy));
 
 // A - rock
 // B - papper
@@ -80,4 +81,4 @@ const secondSolutionStrategy = ({ oponentShape, myMove }) =>
     },
   }[oponentShape][myMove]);
 
-console.log("second solution score", getScore(secondSolutionStrategy));
+console.log("second part result:", getScore(secondSolutionStrategy));

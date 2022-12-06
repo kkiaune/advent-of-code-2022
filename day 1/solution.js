@@ -1,10 +1,11 @@
 const fs = require("fs");
-const listOfCalories = fs.readFileSync("input.txt", "utf-8");
+let listOfCalories = fs.readFileSync("input.txt", "utf-8");
+listOfCalories = listOfSuplies.split(/\r?\n/);
 
 const elfsCalories = [];
 let sumOfElfCalories = 0;
 
-listOfCalories.split(/\r?\n/).forEach((calories) => {
+listOfCalories.forEach((calories) => {
   if (!calories.length) {
     elfsCalories.push(sumOfElfCalories);
     sumOfElfCalories = 0;
@@ -13,10 +14,10 @@ listOfCalories.split(/\r?\n/).forEach((calories) => {
   }
 });
 
-console.log("first part solution", Math.max(...elfsCalories));
+console.log("first part result:", Math.max(...elfsCalories));
 
 const sortedElfsCalories = elfsCalories.sort((a, b) => b - a);
 console.log(
-  "second part solution",
+  "second part result:",
   sortedElfsCalories[0] + sortedElfsCalories[1] + sortedElfsCalories[2]
 );
