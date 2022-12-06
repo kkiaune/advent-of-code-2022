@@ -1,10 +1,10 @@
-## Advent Code 2022
+# Advent Code 2022
 
-# How to:
+### How to:
 1. cd to a specific day
 2. run command `node solution.js`
 
-# Days track:
+### Days track:
 
 - [x] [Day 1](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-1)
 - [x] [Day 2](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-2)
