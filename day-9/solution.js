@@ -2,10 +2,8 @@ const fs = require("fs");
 let list = fs.readFileSync("input.txt", "utf-8");
 list = list.split(/\r?\n/);
 
-let headX = 0;
-let headY = 0;
-let tailX = 0;
-let tailY = 0;
+let head = [0, 0];
+let tail = [0, 0];
 const visitedPos = new Set();
 
 list.every((command) => {
@@ -13,36 +11,31 @@ list.every((command) => {
 
   new Array(+count).fill(null).forEach(() => {
     if (direction === "U") {
-      headX -= 1;
+      head[0] -= 1;
     } else if (direction === "R") {
-      headY += 1;
+      head[1] += 1;
     } else if (direction === "D") {
-      headX += 1;
+      head[0] += 1;
     } else if (direction === "L") {
-      headY -= 1;
+      head[1] -= 1;
     }
 
-    const xDiff = tailX - headX;
-    const yDiff = tailY - headY;
+    const xDiff = tail[0] - head[0];
+    const yDiff = tail[1] - head[1];
 
     if (xDiff === 2) {
-      tailX = headX + 1;
-      tailY = headY;
+      tail = [head[0] + 1, head[1]];
     } else if (yDiff === 2) {
-      tailX = headX;
-      tailY = headY + 1;
+      tail = [head[0], head[1] + 1];
     } else if (xDiff === -2) {
-      tailX = headX - 1;
-      tailY = headY;
+      tail = [head[0] - 1, head[1]];
     } else if (yDiff === -2) {
-      tailX = headX;
-      tailY = headY - 1;
+      tail = [head[0], head[1] - 1];
     } else {
-      tailX = headX + xDiff;
-      tailY = headY + yDiff;
+      tail = [head[0] + xDiff, head[1] + yDiff];
     }
 
-    visitedPos.add(`${tailX},${tailY}`);
+    visitedPos.add(tail.join(","));
   });
 
   return true;
