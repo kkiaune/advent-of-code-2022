@@ -14,3 +14,4 @@
 - [x] [Day 6](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-6)
 - [x] [Day 7](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-7)
 - [x] [Day 8](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-8)
+- [x] [Day 9](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-9)
