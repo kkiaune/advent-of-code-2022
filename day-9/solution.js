@@ -1,5 +1,6 @@
 const fs = require("fs");
 let list = fs.readFileSync("input.txt", "utf-8");
+// let list = fs.readFileSync("example.txt", "utf-8");
 list = list.split(/\r?\n/);
 
 const moveTail = (head, tail) => {
@@ -54,7 +55,11 @@ const getTailVisitedPos = (knotsLength) => {
   return visitedPositions;
 };
 
-const visitedPositions = getTailVisitedPos(10);
-
-console.log("first part result:", visitedPositions[0].size);
-console.log("second part result:", visitedPositions[9].size);
+const visitedPositions = getTailVisitedPos(2);
+visitedPositions.forEach((pos, index) =>
+  console.log("position %s: %s", index, pos.size)
+);
+// 5695
+// console.log("first part result:", visitedPositions[0].size);
+// 2434
+// console.log("second part result:", visitedPositions[9].size);
