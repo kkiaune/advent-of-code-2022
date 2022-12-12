@@ -10,12 +10,12 @@ const grid = list
     return row.map((columnElement, columnIndex) => {
       if (columnElement === "S") {
         start = [rowIndex, columnIndex];
-        return "a";
+        return "a".charCodeAt(0);
       } else if (columnElement === "E") {
         end = [rowIndex, columnIndex];
-        return "z";
+        return "z".charCodeAt(0);
       }
-      return columnElement;
+      return columnElement.charCodeAt(0);
     });
   });
 
@@ -57,11 +57,7 @@ const getShortestRouteDistance = (startPositions) => {
         }
 
         // new position is too high to climb next
-        if (
-          grid[newRow][newColumn].charCodeAt(0) -
-            grid[row][column].charCodeAt(0) >
-          1
-        ) {
+        if (grid[newRow][newColumn] - grid[row][column] > 1) {
           continue;
         }
 
@@ -89,7 +85,7 @@ console.log(
     grid.reduce((acc, row, rowIndex) => {
       row.forEach(
         (column, columnIndex) =>
-          column === "a" && acc.push([rowIndex, columnIndex])
+          column === "a".charCodeAt(0) && acc.push([rowIndex, columnIndex])
       );
       return acc;
     }, [])
