@@ -18,3 +18,4 @@
 - [x] [Day 10: Cathode-Ray Tube](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-10)
 - [x] [Day 11: Monkey in the Middle](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-11)
 - [x] [Day 12: Hill Climbing Algorithm](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-12)
+- [] [Day 13: Distress Signal](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-13)
