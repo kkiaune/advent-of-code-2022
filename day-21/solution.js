@@ -25,3 +25,24 @@ const getMonkeyResult = (monkeyName) => {
 };
 
 console.log("first part result:", getMonkeyResult("root"));
+
+const getMonkeyResultPart2 = (monkeyName) => {
+  if (typeof monkeysActions[monkeyName] === "number") {
+    return monkeysActions[monkeyName];
+  }
+
+  let [monkey1, operation, monkey2] = monkeysActions[monkeyName].split(" ");
+
+  const firstMonkeyResult = getMonkeyResult(monkey1);
+  const secondMonkeyResult = getMonkeyResult(monkey2);
+
+  if (monkeyName === "root") {
+    operation = "===";
+    console.log("firstMonkeyResult", firstMonkeyResult);
+    console.log("secondMonkeyResult", secondMonkeyResult);
+  }
+
+  return eval(firstMonkeyResult + operation + secondMonkeyResult);
+};
+
+console.log("second part result:", getMonkeyResultPart2("root"));
