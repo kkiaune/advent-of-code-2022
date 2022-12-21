@@ -26,7 +26,7 @@
 - [] [Day 18: Boiling Boulders](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-18)
 - [] [Day 19: Not Enough Minerals](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-19)
 - [] [Day 20: Grove Positioning System](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-20)
-- [] [Day 21: Monkey Math](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-21)
+- [x] [Day 21: Monkey Math](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-21)
 - [] [Day 22: TBD](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-22)
 - [] [Day 23: TBD](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-23)
 - [] [Day 24: TBD](https://github.com/kkiaune/advent-of-code-2022/tree/main/day-24)

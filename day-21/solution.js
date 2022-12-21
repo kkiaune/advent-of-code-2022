@@ -1,4 +1,6 @@
 const fs = require("fs");
+const nerdamer = require("nerdamer");
+require("nerdamer/Solve");
 // let list = fs.readFileSync("example.txt", "utf-8");
 let list = fs.readFileSync("input.txt", "utf-8");
 list = list.split(/\r?\n/);
@@ -12,37 +14,24 @@ let monkeysActions = list.reduce((acc, line) => {
   };
 }, {});
 
-console.log("monkeysActions", monkeysActions);
-
 const getMonkeyResult = (monkeyName) => {
-  if (typeof monkeysActions[monkeyName] === "number") {
+  if (typeof monkeysActions[monkeyName] === "number" || monkeyName === "humn") {
     return monkeysActions[monkeyName];
   }
 
   const [monkey1, operation, monkey2] = monkeysActions[monkeyName].split(" ");
-
-  return eval(getMonkeyResult(monkey1) + operation + getMonkeyResult(monkey2));
-};
-
-console.log("first part result:", getMonkeyResult("root"));
-
-const getMonkeyResultPart2 = (monkeyName) => {
-  if (typeof monkeysActions[monkeyName] === "number") {
-    return monkeysActions[monkeyName];
-  }
-
-  let [monkey1, operation, monkey2] = monkeysActions[monkeyName].split(" ");
-
   const firstMonkeyResult = getMonkeyResult(monkey1);
   const secondMonkeyResult = getMonkeyResult(monkey2);
 
-  if (monkeyName === "root") {
-    operation = "===";
-    console.log("firstMonkeyResult", firstMonkeyResult);
-    console.log("secondMonkeyResult", secondMonkeyResult);
-  }
-
-  return eval(firstMonkeyResult + operation + secondMonkeyResult);
+  return `(${firstMonkeyResult})${operation}(${secondMonkeyResult})`;
 };
 
-console.log("second part result:", getMonkeyResultPart2("root"));
+console.log("first part result:", eval(getMonkeyResult("root")).toString());
+
+monkeysActions["root"] = monkeysActions["root"].replace(/(\+|\/|\*|\-)/, "=");
+monkeysActions["humn"] = "x";
+
+console.log(
+  "second part result:",
+  nerdamer.solveEquations(getMonkeyResult("root"), "x").toString()
+);
